@@ -1,0 +1,163 @@
+Starting program: /mnt/g/OneDrive/VECC Upload Folder/new/workForToday/HRG_Model/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Program received signal SIGINT, Interrupt.
+0x00007ffffcd50154 in __GI___libc_write (fd=2, buf=0x7ffffffe6d40, nbytes=90)
+    at ../sysdeps/unix/sysv/linux/write.c:27
+27	../sysdeps/unix/sysv/linux/write.c: No such file or directory.
+#0  0x00007ffffcd50154 in __GI___libc_write (fd=2, buf=0x7ffffffe6d40, nbytes=90)
+    at ../sysdeps/unix/sysv/linux/write.c:27
+#1  0x00007ffffcccb1bd in _IO_new_file_write (f=0x7ffffd02c680 <_IO_2_1_stderr_>, data=0x7ffffffe6d40, n=90)
+    at fileops.c:1203
+#2  0x00007ffffcccbb2f in new_do_write (to_do=<optimized out>, 
+    data=0x7ffffffe6d40 "Error in <ROOT::Math::AdaptiveIntegratorMultiDim::DoIntegral()>: Logic error: idvax0 < 1!\n\001", fp=0x7ffffd02c680 <_IO_2_1_stderr_>) at fileops.c:457
+#3  _IO_new_file_xsputn (f=0x7ffffd02c680 <_IO_2_1_stderr_>, data=<optimized out>, n=90) at fileops.c:1277
+#4  0x00007ffffcc9e707 in buffered_vfprintf (s=s@entry=0x7ffffd02c680 <_IO_2_1_stderr_>, 
+    format=format@entry=0x7fffff0dda43 "%s", args=args@entry=0x7ffffffe9300) at vfprintf.c:2350
+#5  0x00007ffffcc9b726 in _IO_vfprintf_internal (s=s@entry=0x7ffffd02c680 <_IO_2_1_stderr_>, 
+    format=0x7fffff0dda43 "%s", ap=ap@entry=0x7ffffffe9300) at vfprintf.c:1301
+#6  0x00007ffffcd724c6 in ___fprintf_chk (fp=0x7ffffd02c680 <_IO_2_1_stderr_>, flag=1, 
+    format=<optimized out>) at fprintf_chk.c:35
+#7  0x00007ffffef32cd8 in DebugPrint(char const*, ...) () from /home/masterfelu/root/lib/libCore.so.6.18
+#8  0x00007ffffef334fa in DefaultErrorHandler(int, bool, char const*, char const*) ()
+   from /home/masterfelu/root/lib/libCore.so.6.18
+#9  0x00007ffffef32f26 in ErrorHandler () from /home/masterfelu/root/lib/libCore.so.6.18
+#10 0x00007ffffef32fef in Error(char const*, char const*, ...) ()
+   from /home/masterfelu/root/lib/libCore.so.6.18
+#11 0x00007ffffdd21f24 in ROOT::Math::AdaptiveIntegratorMultiDim::DoIntegral(double const*, double const*, bool) () from /home/masterfelu/root/lib/libMathCore.so.6.18
+#12 0x00007ffffe8dc113 in TF1::IntegralMultiple(int, double const*, double const*, int, double, double, double&, int&, int&) () from /home/masterfelu/root/lib/libHist.so.6.18
+#13 0x00007ffffe8f3f46 in TF2::Integral(double, double, double, double, double) [clone .localalias.59] ()
+   from /home/masterfelu/root/lib/libHist.so.6.18
+#14 0x0000000008048eaa in IntegrationFunction::integrate(double*) ()
+#15 0x000000000802d5f1 in Susceptibility2B::getValueEachWithoutDecay(int, double, double, double, double) ()
+#16 0x000000000802e364 in Susceptibility2B::getValueEach(int, double, double, double, double) ()
+#17 0x000000000801984a in STAR_netProton_sigma2byM::getValue(double, double, double, double) ()
+#18 0x000000000804a88f in ThermalMinimizer::minFunction(double const*) ()
+#19 0x000000000804b974 in ThermalMinFunction_wrapped(double const*) ()
+#20 0x000000000804c61d in ROOT::Math::FunctorHandler<ROOT::Math::Functor, double (*)(double const*)>::DoEval(double const*) const ()
+#21 0x000000000804c0ba in ROOT::Math::IBaseFunctionMultiDimTempl<double>::operator()(double const*) const ()
+#22 0x000000000804be68 in ROOT::Math::Functor::DoEval(double const*) const ()
+#23 0x00007ffffda1f0a0 in ROOT::Minuit2::MnUserFcn::operator()(ROOT::Minuit2::LAVector const&) const ()
+   from /home/masterfelu/root/lib/libMinuit2.so.6.18
+#24 0x00007ffffda2b4c7 in ROOT::Minuit2::Numerical2PGradientCalculator::operator()(ROOT::Minuit2::MinimumParameters const&, ROOT::Minuit2::FunctionGradient const&) const ()
+   from /home/masterfelu/root/lib/libMinuit2.so.6.18
+#25 0x00007ffffda2c613 in ROOT::Minuit2::Numerical2PGradientCalculator::operator()(ROOT::Minuit2::MinimumParameters const&) const () from /home/masterfelu/root/lib/libMinuit2.so.6.18
+#26 0x00007ffffda1b886 in ROOT::Minuit2::MnSeedGenerator::operator()(ROOT::Minuit2::MnFcn const&, ROOT::Minuit2::GradientCalculator const&, ROOT::Minuit2::MnUserParameterState const&, ROOT::Minuit2::MnStrategy const&) const () from /home/masterfelu/root/lib/libMinuit2.so.6.18
+#27 0x00007ffffda27926 in ROOT::Minuit2::ModularFunctionMinimizer::Minimize(ROOT::Minuit2::FCNBase const&, ROOT::Minuit2::MnUserParameterState const&, ROOT::Minuit2::MnStrategy const&, unsigned int, double) const ()
+   from /home/masterfelu/root/lib/libMinuit2.so.6.18
+#28 0x00007ffffd9e549d in ROOT::Minuit2::Minuit2Minimizer::Minimize() ()
+   from /home/masterfelu/root/lib/libMinuit2.so.6.18
+#29 0x000000000804ad19 in ThermalMinimizer::minimize(int, double, bool) ()
+#30 0x0000000008012b57 in numericalMinimizationCumulants() ()
+#31 0x0000000008018fc2 in main ()
+Undefined command: "log".  Try "help".
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+Program not restarted.
+Undefined command: "stac".  Try "help".
+Undefined command: "stack".  Try "help".
+Undefined command: "data".  Try "help".
+Undefined command: "status".  Try "help".
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+Set breakpoint at specified location.
+break [PROBE_MODIFIER] [LOCATION] [thread THREADNUM] [if CONDITION]
+PROBE_MODIFIER shall be present if the command is to be placed in a
+probe point.  Accepted values are `-probe' (for a generic, automatically
+guessed probe type), `-probe-stap' (for a SystemTap probe) or 
+`-probe-dtrace' (for a DTrace probe).
+LOCATION may be a linespec, address, or explicit location as described
+below.
+
+With no LOCATION, uses current execution address of the selected
+stack frame.  This is useful for breaking on return to a stack frame.
+
+THREADNUM is the number from "info threads".
+CONDITION is a boolean expression.
+
+Linespecs are colon-separated lists of location parameters, such as
+source filename, function name, label name, and line number.
+Example: To specify the start of a label named "the_top" in the
+function "fact" in the file "factorial.c", use
+"factorial.c:fact:the_top".
+
+Address locations begin with "*" and specify an exact address in the
+program.  Example: To specify the fourth byte past the start function
+"main", use "*main + 4".
+
+Explicit locations are similar to linespecs but use an option/argument
+syntax to specify location parameters.
+Example: To specify the start of the label named "the_top" in the
+function "fact" in the file "factorial.c", use "-source factorial.c
+-function fact -label the_top".
+
+By default, a specified function is matched against the program's
+functions in all scopes.  For C++, this means in all namespaces and
+classes.  For Ada, this means in all packages.  E.g., in C++,
+"func()" matches "A::func()", "A::B::func()", etc.  The
+"-qualified" flag overrides this behavior, making GDB interpret the
+specified name as a complete fully-qualified name instead.
+
+Multiple breakpoints at one place are permitted, and useful if their
+conditions are different.
+
+Do "help breakpoints" for info on other commands dealing with breakpoints.
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+Tracepoint 1 at 0x7ffffcd50154: file ../sysdeps/unix/sysv/linux/write.c, line 27.
+Quit

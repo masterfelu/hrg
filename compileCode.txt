@@ -1,0 +1,13 @@
+g++ freezeout_netCharge_fluc.cpp Particles.cpp ThermalFunctions.cpp IntegrationFunction.cpp MiscellaneousFunctions.cpp ThermalMinimizer.cpp  $(root-config --glibs --cflags) -lMinuit2
+
+g++ hadronYieldRatio.cpp Particles.cpp ThermalFunctions.cpp IntegrationFunction.cpp MiscellaneousFunctions.cpp `root-config --glibs --cflags`
+
+g++ freezeoutPlots.cpp `root-config --glibs --cflags`
+
+g++ cumulantRatioPlots.cpp Particles.cpp ThermalFunctions.cpp IntegrationFunction.cpp MiscellaneousFunctions.cpp `root-config --glibs --cflags`
+
+g++ source1.cpp source2.cpp source3.cpp `root-config --glibs --cflags`
+
+
+g++ freezeout_netProton_fluc.cpp Particles.cpp ThermalFunctions.cpp IntegrationFunction.cpp MiscellaneousFunctions.cpp ThermalMinimizer.cpp  $(root-config --glibs --cflags) -lMinuit2
+./a.out > fitLog_netProton.txt

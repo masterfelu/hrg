@@ -1,0 +1,5 @@
+cl /I C:\ROOT\root-6.18.04\include Source.cpp /link /LIBPATH:C:\ROOT\root-6.18.04\lib libHist.lib libMatrix.lib libRIO.lib libMathCore.lib libImt.lib libThread.lib libCore.lib
+
+cl /nologo /TP /Z7 /MD /GR /EHsc /I C:\ROOT\root-6.18.04\include Source.cpp /link /LIBPATH:C:\ROOT\root-6.18.04\lib libHist
+
+cl /nologo /TP /Z7 /MD /GR /EHsc  TestProject.cpp /link /LIBPATH:C:\ROOT\root-6.18.04\lib libCore.lib libMathCore.lib
