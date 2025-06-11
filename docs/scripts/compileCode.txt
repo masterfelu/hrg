@@ -1,0 +1,22 @@
+g++ src/freezeout_netCharge_fluc.cpp src/Particles.cpp src/ThermalFunctions.cpp \
+    src/IntegrationFunction.cpp src/MiscellaneousFunctions.cpp src/ThermalMinimizer.cpp \
+    -I include $(root-config --glibs --cflags) -lMinuit2
+
+# Example for building hadron yield ratio
+g++ src/hadronYieldRatio.cpp src/Particles.cpp src/ThermalFunctions.cpp \
+    src/IntegrationFunction.cpp src/MiscellaneousFunctions.cpp -I include \
+    `root-config --glibs --cflags`
+
+# Plotting utilities
+g++ src/freezeoutPlots.cpp -I include `root-config --glibs --cflags`
+
+g++ src/cumulantRatioPlots.cpp src/Particles.cpp src/ThermalFunctions.cpp \
+    src/IntegrationFunction.cpp src/MiscellaneousFunctions.cpp -I include \
+    `root-config --glibs --cflags`
+
+# Other sources can be compiled similarly
+
+g++ src/freezeout_netProton_fluc.cpp src/Particles.cpp src/ThermalFunctions.cpp \
+    src/IntegrationFunction.cpp src/MiscellaneousFunctions.cpp src/ThermalMinimizer.cpp \
+    -I include $(root-config --glibs --cflags) -lMinuit2
+./a.out > fitLog_netProton.txt
